@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kanbas</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <!-- First Column -->
+        <td>
+            <ul>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Calendar</a></li>
+                <li><a href="#">Inbox</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Studio</a></li>
+                <li><a href="#">Commons</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </td>
+
+        <!-- Second Column  -->
+        <td>
+            <ul>
+                <li><a href="../kanbas/home.html">Home</a></li>
+                <li><a href="#">Modules</a></li>
+                <li><a href="#">Piazza</a></li>
+                <li><a href="#">Zoom Meetings</a></li>
+                <li><a href="#">Assignments</a></li>
+                <li><a href="#">Quizzes</a></li>
+                <li><a href="../kanbas/grades.html">Grades</a></li>
+                <li><a href="#">People</a></li>
+                <li><a href="#">Panopto Video</a></li>
+                <li><a href="#">Discussions</a></li>
+                <li><a href="#">Announcements</a></li>
+                <li><a href="#">Pages Files</a></li>
+                <li><a href="#">Rubrics</a></li>
+                <li><a href="#">Outcomes</a></li>
+                <li><a href="#">Collaborations</a></li>
+                <li><a href="#">Syllabus</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </td>
+
+        <!-- Third Column with a Text Box -->
+        <td>
+            <select id="grades-top-select1">
+                <option selected value="GRADEBOOK">
+                    Gradebook</option>
+                <option value="HOLDER">holder</option>
+            </select>
+            <button type="button">Import</button>
+            <select id="grades-top-select2">
+                <option selected value="EXPORT">
+                    Export</option>
+                <option value="HOLDER">holder</option>
+            </select>
+            <button type="button">Configure</button>
+
+            <h2> Student Names</h2>
+            <input type="text" id="text-fields-student-name"
+                   placeholder="Search Students"/><br/>
+
+            <h2> Assignment Names</h2>
+            <input type="text" id="text-fields-assignment-name"
+                   placeholder="Search Assignments"/><br/>
+
+            <br><button type="button">Apply Filters</button><br/>
+            <br>
+            <table border="1" align="center">
+                <tr>
+                    <th>Student</th>
+                    <th>Assignment 1</th>
+                    <th>Assignment 2</th>
+                    <th>Assignment 3</th>
+                    <th>Assignment 4</th>
+                </tr>
+                <tr>
+                    <td>Student 1</td>
+                    <td><input type="number" id="grade1_student1" placeholder="0" value="90"></td>
+                    <td><input type="number" id="grade2_student1" placeholder="0" value="95"></td>
+                    <td>85</td>
+                    <td>77</td>
+                </tr>
+                <tr>
+                    <td>Student 2</td>
+                    <td>92</td>
+                    <td><input type="number" id="grade2_student2" placeholder="0" value="89"></td>
+                    <td><input type="number" id="grade3_student2" placeholder="0" value="45"></td>
+                    <td>78</td>
+                </tr>
+                <tr>
+                    <td>Student 3</td>
+                    <td><input type="number" id="grade1_student3" placeholder="0" value="99"></td>
+                    <td>75</td>
+                    <td><input type="number" id="grade3_student3" placeholder="0" value="41"></td>
+                    <td>85</td>
+                </tr>
+                <tr>
+                    <td>Student 4</td>
+                    <td>83</td>
+                    <td><input type="number" id="grade2_student4" placeholder="0" value="29"></td>
+                    <td><input type="number" id="grade3_student4" placeholder="0" value="63"></td>
+                    <td>94</td>
+                </tr>
+            </table>
+        </td>
+
+    </tr>
+</table>
+</body>
+</html>
