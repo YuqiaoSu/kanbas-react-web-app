@@ -2,9 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Kanbas</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            vertical-align: top;
+        }
+        .content-container {
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
+<table>
+    <tr>
+        <!-- First Column -->
+        <td>
+            <ul>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Calendar</a></li>
+                <li><a href="#">Inbox</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Studio</a></li>
+                <li><a href="#">Commons</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </td>
 
+        <!-- Second Column  -->
+        <td>
+            <ul>
+                <li><a href="../home.html">Home</a></li>
+                <li><a href="#">Modules</a></li>
+                <li><a href="#">Piazza</a></li>
+                <li><a href="#">Zoom Meetings</a></li>
+                <li><a href="../assignments/index.html">Assignments</a></li>
+                <li><a href="#">Quizzes</a></li>
+                <li><a href="../grades.html">Grades</a></li>
+                <li><a href="#">People</a></li>
+                <li><a href="#">Panopto Video</a></li>
+                <li><a href="#">Discussions</a></li>
+                <li><a href="#">Announcements</a></li>
+                <li><a href="#">Pages Files</a></li>
+                <li><a href="#">Rubrics</a></li>
+                <li><a href="#">Outcomes</a></li>
+                <li><a href="#">Collaborations</a></li>
+                <li><a href="#">Syllabus</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </td>
+
+        <!-- Third Column with a Text Box -->
+        <td>
+            <div class="content-container">
+            <input type="text" id="text-fields-search-for-assignments"
+                   placeholder="Search For Assignments"/>
+            <button type="button">Group</button>
+            <button type="button">Assignment</button>
+
+            <select id="edit-assignment-dates">
+                <option value="EDIT ASSIGNMENT DATE"  selected >Edit Assigment Dates</option>
+                <option value="SHARE TO COMMONS">Share to Commons</option>
+            </select>
+                <hr>
+            </div>
+
+            <div> <h2> ASSIGNMENTS 40% of Total</h2>
+            <select id="edit-assignment">
+                <option value="EDIT">Edit</option>
+                <option value="SPEED GRADER">Speed Grader</option>
+                <option value="DUPLICATE">Duplicate</option>
+                <option value="DELETE">Delete</option>
+                <option value="MOVE TO">Move To...</option>
+                <option value="SEND TO">Send To...</option>
+                <option value="COPY TO">Copy To...</option>
+                <option value="SHARE TO COMMONS">Share to Commons</option>
+            </select>
+            <a href="../assignments/edit.html">A1 - ENV + HTML Multiple Modules</a> | Not available<br>
+            <a href="../assignments/edit.html">A2 - CSS + BOOTSTRAP Multiple Modules</a> | Not available<br>
+            <a href="../assignments/edit.html">A3 - JS + REACT Multiple Modules</a> | Not available<br>
+            <a href="../assignments/edit.html">A4 - STATE + REDUX Multiple Modules</a> | Not available<br>
+            <a href="../assignments/edit.html">A5 - NODE + SESSION Multiple Modules</a> | Not available<br>
+            <a href="../assignments/edit.html">A6 - MONGO + MONGOOSE Multiple Modules</a> | Not available<br>
+
+
+            <h2> Assignment Names</h2>
+
+        </td>
+
+    </tr>
+</table>
 </body>
 </html>
