@@ -2,26 +2,170 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Edit Assignment</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            vertical-align: top;
+        }
+        .content-container {
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-<h2> Assignment Name</h2>
-<br/>
-<input value = "A! - ENV + HTML">
-<br/>
-<textarea> This is the description of the assignment</textarea>
-<br/>
-<label for = "points"> Points </label>
-<br/>
-<input id = "points" max = "100" min = "50" step = "5" type = number value = "100"/>
-<br/>
-Online Entry Options
-<br />
-<label> <input type = "checkbox" /> Text Entry <br /> </label>
-<input type = "checkbox" checked /> Website URL <br />
-<input type = "checkbox" /> Media Recording <br />
-<input type = "checkbox" /> Annotation <br />
-<input type = "checkbox" /> Uploads <br />
+<table>
+    <tr>
+        <!-- First Column -->
+        <td>
+            <ul>
+                <li><a href="../profile/index.html">Account</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="../home.html">Courses</a></li>
+                <li><a href="#">Calendar</a></li>
+                <li><a href="#">Inbox</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Studio</a></li>
+                <li><a href="#">Commons</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </td>
 
+        <!-- Second Column  -->
+        <td>
+            <ul>
+                <li><a href="../home.html">Home</a></li>
+                <li><a href="#">Modules</a></li>
+                <li><a href="#">Piazza</a></li>
+                <li><a href="#">Zoom Meetings</a></li>
+                <li><a href="../assignments/index.html">Assignments</a></li>
+                <li><a href="#">Quizzes</a></li>
+                <li><a href="../grades.html">Grades</a></li>
+                <li><a href="#">People</a></li>
+                <li><a href="#">Panopto Video</a></li>
+                <li><a href="#">Discussions</a></li>
+                <li><a href="#">Announcements</a></li>
+                <li><a href="#">Pages Files</a></li>
+                <li><a href="#">Rubrics</a></li>
+                <li><a href="#">Outcomes</a></li>
+                <li><a href="#">Collaborations</a></li>
+                <li><a href="#">Syllabus</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </td>
+
+        <!-- Third Column -->
+        <td>
+            <div class="content-container">
+                <select id="Edit-Assignment">
+                    <option value="SPEED GRADER"  selected >SpeedGrader</option>
+                    <option value="holder">holder</option>
+                </select>
+                <hr>
+            </div>
+
+            <h2> Assignment Name</h2>
+            <input value = "A! - ENV + HTML"><br/>
+            <br/>
+            <textarea> This is the description of the assignment</textarea><br/>
+            <br/>
+
+            <label for = "points"> Points </label>
+            <br/>
+            <input id = "points" max = "100" min = "50" step = "5" type = number value = "100"/>
+
+            <br/>
+            <br/>
+            <label for = "assignment-group"> Assignment-Group</label><br/>
+            <select id="assignment-group">
+                <option value="ASSIGNMENTS"  selected >ASSIGNMENTS</option>
+                <option value="holder">holder</option>
+            </select>
+
+            <br/>
+            <br/>
+            <label for = "display-grade"> Display Grade as</label><br/>
+            <select id="display-grade">
+                <option value="PERCENTAGE"  selected >Percentage</option>
+                <option value="holder">holder</option>
+            </select>
+
+            <br/>
+            <br/>
+            <label for = "submission-type"> Submission Type</label><br/>
+            <select id="submission-type">
+                <option value="ONLINE"  selected >online</option>
+                <option value="holder">holder</option>
+            </select>
+
+            <br/>
+            <br/>
+            Online Entry Options
+            <br/>
+            <label> <input type = "checkbox" /> Text Entry </label><br />
+            <label><input type="checkbox" /> Website URL</label><br />
+            <label><input type="checkbox" /> Media Recording</label><br />
+            <label><input type="checkbox" /> Annotation</label><br />
+            <label><input type="checkbox" /> Uploads</label><br />
+
+            <br/>
+            <br/>
+            <label for = "submission-attempts"> Submission Attempts</label><br/>
+            <select id="submission-attempts">
+                <option value="UNLIMITED"  selected >Unlimited</option>
+                <option value="holder">holder</option>
+            </select>
+
+            <br/>
+            <br/>
+
+            <label for = "plagiarism-review"> Plagiarism Review</label><br/>
+            <select id="plagiarism-review">
+                <option value="NONE"  selected >None</option>
+                <option value="holder">holder</option>
+            </select>
+
+            <br/>
+            <br/>
+            Group Assignment
+            <br/>
+            <label><input type="checkbox" /> This is a group assignment</label><br />
+
+            <br/>
+            <br/>
+            Peer Reviews
+            <br/>
+            <label><input type="checkbox" /> Require Peer Reviews</label><br />
+            <br/>
+            <br/>
+
+            Assign
+            <br/>
+            Assign to
+            <br/>
+            <textarea placeholder="Everyone" rows = 1></textarea>
+
+            <br/>
+            Due
+            <br/>
+            <input type = "date" value = "2021-01-01"/><br/>
+            <br/>
+            Available from
+            <br/>
+            <input type = "date" value = "2021-01-01"/><br/>
+            <br/>
+            Until
+            <br/>
+            <input type = "date" value = "2021-01-01"/><br/>
+            <br/>
+            <a href="index.html"> <button>Cancel</button></a>
+            <a href="index.html"> <button>Save</button></a>
+        </td>
+
+    </tr>
+</table>
 </body>
 </html>
