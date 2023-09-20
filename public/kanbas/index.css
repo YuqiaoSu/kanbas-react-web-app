@@ -1,0 +1,44 @@
+/* Sidebar styles */
+.sidebar {
+    width: 85px;
+    background: black;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+/* Links styles */
+.sidebar a {
+    display: block;
+    padding: 10px;
+    margin: 10px 5px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+.sidebar i {
+    font-size: 24px; /* Adjust the icon size as needed */
+    top: 0;
+    left: 50%;
+    right: 50%;
+    color: red;
+}
+
+/* Selected link styles */
+.sidebar a.selected {
+    background-color: white;
+    color: red;
+}
+
+/* Account link styles */
+.account-link {
+    color: white;
+}
+
+/* Dashboard link styles */
+.dashboard-link {
+    color: red;
+}
