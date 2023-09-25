@@ -1,0 +1,43 @@
+.profile {
+    float: left;
+    clear: none;
+    display: inline-block;
+    box-sizing: border-box;
+
+}
+
+.top_bar{
+    margin: 20px;
+}
+.top_bar > i{
+    color: red;
+    font-size: 24px;
+    padding-right: 10px;
+}
+
+
+
+.profile_detail{
+    float: left;
+    text-align: left;
+    width: 67%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.profile_detail .user-icon {
+    font-size: 108px;
+    color: grey;
+    padding-bottom: 10px;
+}
+.profile_detail > h3 {
+    padding-top: 10px;
+}
+.profile_detail .link {
+    text-decoration: none;
+    color: red;
+}
+
+.profile_detail .link-icon {
+    color: grey;
+}

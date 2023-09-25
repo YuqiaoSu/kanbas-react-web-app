@@ -1,0 +1,19 @@
+.edit_profile_detail{
+    float: left;
+    text-align: left;
+    padding: 10px;
+    flex-shrink: 0;
+    flex-direction: column;
+
+}
+
+.edit_profile_detail .user-icon {
+    font-size: 108px;
+    color: grey;
+    padding-bottom: 10px;
+}
+
+
+.url-link-x{
+    color:red;
+}

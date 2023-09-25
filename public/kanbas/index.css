@@ -1,44 +1,67 @@
-/* Sidebar styles */
-.sidebar {
+.container {
+
+    height: 100vh;
+    width: 100vw;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+/*How to make the sidebar black even when ovewflow*/
+}
+
+.container  .sidebar {
+    box-sizing: border-box;
+    float: left;
+    height: 100%;
     width: 85px;
     background: black;
     color: white;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    flex-shrink: 0;
+    flex-direction: column;
 
 }
 
-/* Links styles */
+.sidebar .selected{
+    background-color: white;
+}
+
 .sidebar a {
     display: block;
-    padding: 10px;
-    margin: 10px 5px;
+    margin: 5px;
+    padding: 10px 5px 5px 5px;
     text-decoration: none;
     color: white;
-    position: relative;
 }
 
 .sidebar i {
-    font-size: 24px; /* Adjust the icon size as needed */
-    top: 0;
-    left: 50%;
-    right: 50%;
+    font-size: 24px;
     color: red;
+    display: block;
 }
 
-/* Selected link styles */
-.sidebar a.selected {
-    background-color: white;
-    color: red;
+
+.sidebar p {
+    font-size: 14px;
 }
 
-/* Account link styles */
-.account-link {
+.sidebar .account-image {
     color: white;
 }
 
-/* Dashboard link styles */
-.dashboard-link {
+.selected  .account-image {
+    color: grey;
+}
+
+.sidebar .selected p {
     color: red;
+}
+
+/*How to use 100% of width for wrapper
+ and not letting it drop below the sidebar when shrinking page
+ */
+.content_page_wrapper{
+    float:left;
+    flex-shrink: 0;
+    flex-direction: column;
+
 }
