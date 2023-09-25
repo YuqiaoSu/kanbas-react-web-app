@@ -1,4 +1,4 @@
-.account-links{
+.sticky-links{
     display: flex;
     float: left;
     top: 0;
@@ -11,28 +11,28 @@
     overflow: auto;
 /*    How to make this shrinking with webpage*/
 }
-.account-links ul {
+.sticky-links ul {
     list-style: none;
     margin: 20px;
     padding: 0;
 }
 
-.account-links li {
+.sticky-links li {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.account-links ul a{
+.sticky-links ul a{
     text-decoration: none;
     color: red;
     margin: 2px;
 }
-.account-links .selected li{
+.sticky-links .selected li{
     border-left: solid;
     border-left-color: black;
 
 }
-.account-links .selected li a{
+.sticky-links .selected li a{
     color: black;
 
 }
