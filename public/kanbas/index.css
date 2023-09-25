@@ -1,24 +1,22 @@
-.container {
-
-    height: 100vh;
-    width: 100vw;
-    padding: 0px;
-    margin: 0px;
+container {
     display: flex;
+    flex-wrap: nowrap;
+    height: -webkit-fill-available;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: hidden;
 /*How to make the sidebar black even when ovewflow*/
 }
 
-.container  .sidebar {
-    box-sizing: border-box;
-    float: left;
-    height: 100%;
-    width: 85px;
-    background: black;
-    color: white;
-    text-align: center;
+container  .sidebar {
+    display: flex;
     flex-shrink: 0;
     flex-direction: column;
-
+    height: 100%;
+    width: 85px;
+    background-color: black;
+    color: white;
+    text-align: center;
 }
 
 .sidebar .selected{
@@ -60,8 +58,11 @@
  and not letting it drop below the sidebar when shrinking page
  */
 .content_page_wrapper{
-    float:left;
+    /*float:left;*/
+    display: flex;
     flex-shrink: 0;
     flex-direction: column;
-
+    flex-grow: 1;
+    overflow: auto;
+    position: relative;
 }

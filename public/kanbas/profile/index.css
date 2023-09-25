@@ -1,9 +1,8 @@
 .profile {
-    float: left;
-    clear: none;
-    display: inline-block;
-    box-sizing: border-box;
-
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 1;
+    width: 100%;
 }
 
 .top_bar{
@@ -18,10 +17,7 @@
 
 
 .profile_detail{
-    float: left;
     text-align: left;
-    width: 67%;
-    box-sizing: border-box;
     padding: 10px;
 }
 
