@@ -1,0 +1,83 @@
+.breadcrumb li{
+    color: red;
+}
+
+.breadcrumb a{
+    text-decoration: none;
+    color: red;
+}
+.home-content {
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.custom-padding {
+    padding: 10px 15px; /* Adjust values according to your preference */
+}
+
+.slide-link {
+    color: red;
+}
+
+.green-border {
+    border-left: 2px solid green;
+}
+
+.home-content {
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.header-bar{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-bottom: 5px;
+}
+
+.ellipsis {
+    padding-left: 15px;
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color:grey;
+}
+
+.course-status{
+    flex-shrink: 0;
+    align-items: center;
+    position: relative;
+    margin-left: 15px;
+}
+
+.course-status button{
+    text-align: left;
+}
+
+.coming-up a{
+    text-decoration: none;
+}
+
+.coming-up i{
+    color: grey;
+}
+
+
+.coming-up span{
+    color: red;
+}
+
+.view-calendar{
+    margin-left: 20px;
+    text-decoration: none;
+    color:red;
+}
+
+.view-calendar i{
+color: grey;
+}
