@@ -14,16 +14,21 @@
 }
 
 .custom-padding {
-    padding: 10px 15px; /* Adjust values according to your preference */
+    padding: 10px 15px;
 }
 
-.slide-link {
-    color: red;
+.float-left{
+    float: left;
+    clear:none;
 }
 
 .green-border {
     border-left: 2px solid green;
-    text-align: center;
+}
+
+.assignment-right-icons {
+    margin-left: auto;
+    justify-content: center;
 }
 
 .home-content {
@@ -56,29 +61,3 @@
     margin-left: 15px;
 }
 
-.course-status button{
-    text-align: left;
-}
-
-.coming-up a{
-    text-decoration: none;
-}
-
-.coming-up i{
-    color: grey;
-}
-
-
-.coming-up span{
-    color: red;
-}
-
-.view-calendar{
-    margin-left: 20px;
-    text-decoration: none;
-    color:red;
-}
-
-.view-calendar i{
-color: grey;
-}
