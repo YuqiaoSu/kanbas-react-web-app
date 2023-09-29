@@ -1,0 +1,5 @@
+.row {
+    justify-content: start;
+    flex-grow: 1;
+    margin-top: 20px;
+}

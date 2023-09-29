@@ -2,123 +2,166 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Grades</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        td {
-            vertical-align: top;
-        }
-    </style>
+    <title>Course</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../index.css" rel="stylesheet"/>
+    <link href="../stickyLinks.css" rel="stylesheet"/>
+    <link href="home.css" rel="stylesheet"/>
 </head>
 <body>
-<table>
-    <tr>
-        <!-- First Column -->
-        <td>
-            <ul>
-                <li><a href="../profile/index.html">Account</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="../courses/home.html">Courses</a></li>
-                <li><a href="#">Calendar</a></li>
-                <li><a href="#">Inbox</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Commons</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-        </td>
+<container>
 
-        <!-- Second Column -->
-        <td>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="#">Modules</a></li>
-                <li><a href="#">Piazza</a></li>
-                <li><a href="#">Zoom Meetings</a></li>
-                <li><a href="../assignments/index.html">Assignments</a></li>
-                <li><a href="#">Quizzes</a></li>
-                <li><a href="grades.html">Grades</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Panopto Video</a></li>
-                <li><a href="#">Discussions</a></li>
-                <li><a href="#">Announcements</a></li>
-                <li><a href="#">Pages Files</a></li>
-                <li><a href="#">Rubrics</a></li>
-                <li><a href="#">Outcomes</a></li>
-                <li><a href="#">Collaborations</a></li>
-                <li><a href="#">Syllabus</a></li>
-                <li><a href="#">Settings</a></li>
-            </ul>
-        </td>
+    <div class="sidebar  d-none d-lg-block">
+        <div><img src="../../images/northeastern.jpg" class="card-img-top" alt="..."></div>
+        <div><a href="../profile/index.html"><i class="fa-regular fa-circle-user account-image"></i><p>Account</p></a></div>
+        <div><a href="../dashboard/index.html"><i class="fa-solid fa-gauge-high"></i><p>Dashboard</p></a></div>
+        <div class="selected"><a href="../courses/home.html"><i class="fas fa-book"></i><p>Courses</p></a></div>
+        <div><a href="#"><i class="far fa-calendar-alt"></i><p>Calendar</p></a></div>
+        <div><a href="#"><i class="fas fa-inbox"></i><p>Inbox</p></a></div>
+        <div><a href="#"><i class="fa-regular fa-clock"></i><p>History</p></a></div>
+        <div><a href="#"><i class="fa-solid fa-tv"></i><p>Studio</p></a></div>
+        <div><a href="#"><i class="fas fa-share"></i><p>Commons</p></a></div>
+        <div><a href="#"><i class="far fa-question-circle"></i><p>Help</p></a></div>
 
-        <!-- Third Column -->
-        <td>
-            <select id="grades-top-select1">
-                <option selected value="GRADEBOOK">
-                    Gradebook</option>
-                <option value="HOLDER">holder</option>
-            </select>
-            <button type="button">Import</button>
-            <select id="grades-top-select2">
-                <option selected value="EXPORT">
-                    Export</option>
-                <option value="HOLDER">holder</option>
-            </select>
-            <button type="button">Configure</button>
+    </div>
+    <div class = "content_page_wrapper">
+        <nav class="float-left pt-3 ps-3" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" >
+            <ol class="breadcrumb">
+                <li> <i class="fa-solid fa-bars ms-3"></i> </li>
+                <li class="breadcrumb-item ms-3 color"><a href="../dashboard/index.html">CS4550_11111_Fall</a></li>
+                <li class="breadcrumb-item active" style="text-overflow-ellipsis: 1"  aria-current="page">Grade</li>
+                <li></li>
+            </ol>
+        </nav>
 
-            <h2> Student Names</h2>
-            <input type="text" id="text-fields-student-name"
-                   placeholder="Search Students"/><br/>
+        <hr>
 
-            <h2> Assignment Names</h2>
-            <input type="text" id="text-fields-assignment-name"
-                   placeholder="Search Assignments"/><br/>
+        <div class="home-content">
 
-            <br><button type="button">Apply Filters</button><br/>
-            <br>
-            <table border= "1" align="center">
-                <tr>
-                    <th>Student</th>
-                    <th>Assignment 1</th>
-                    <th>Assignment 2</th>
-                    <th>Assignment 3</th>
-                    <th>Assignment 4</th>
-                </tr>
-                <tr>
-                    <td>Student 1</td>
-                    <td><input type="number" id="grade1_student1" placeholder="0" value="90"></td>
-                    <td><input type="number" id="grade2_student1" placeholder="0" value="95"></td>
-                    <td>85</td>
-                    <td>77</td>
-                </tr>
-                <tr>
-                    <td>Student 2</td>
-                    <td>92</td>
-                    <td><input type="number" id="grade2_student2" placeholder="0" value="89"></td>
-                    <td><input type="number" id="grade3_student2" placeholder="0" value="45"></td>
-                    <td>78</td>
-                </tr>
-                <tr>
-                    <td>Student 3</td>
-                    <td><input type="number" id="grade1_student3" placeholder="0" value="99"></td>
-                    <td>75</td>
-                    <td><input type="number" id="grade3_student3" placeholder="0" value="41"></td>
-                    <td>85</td>
-                </tr>
-                <tr>
-                    <td>Student 4</td>
-                    <td>83</td>
-                    <td><input type="number" id="grade2_student4" placeholder="0" value="29"></td>
-                    <td><input type="number" id="grade3_student4" placeholder="0" value="63"></td>
-                    <td>94</td>
-                </tr>
-            </table>
-        </td>
+            <div class="sticky-links  d-none d-lg-block">
+                <span class="ellipsis">202410_1 Fall 2023 Semester Full Term</span>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="#">Modules</a></li>
+                    <li><a href="#">Piazza</a></li>
+                    <li><a href="#">Zoom Meetings</a></li>
+                    <li><a href="../assignments/index.html">Assignments</a></li>
+                    <li><a href="#">Quizzes</a></li>
+            <div class="selected"><li><a href="grades.html">Grades</a></li></div>
+                    <li><a href="#">People</a></li>
+                    <li><a href="#">Panopto Video</a></li>
+                    <li><a href="#">Discussions</a></li>
+                    <li><a href="#">Announcements</a></li>
+                    <li><a href="#">Pages Files</a></li>
+                    <li><a href="#">Rubrics</a></li>
+                    <li><a href="#">Outcomes</a></li>
+                    <li><a href="#">Collaborations</a></li>
+                    <li><a href="#">Syllabus</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </div>
 
-    </tr>
-</table>
+            <div class="ps-2 flex-grow-1 pe-5 justify-content-center">
+                <div class="header-bar">
+                    <button class="btn btn-light">
+                        <i class="fas fa-upload"></i> Import
+                    </button>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!--                The main page below the hr line-->
+                <div class="d-flex flex-column justify-content-center ">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Student Names Select -->
+                            <div class="col-md-6">
+                                <label for="studentNames" class="form-label fw-bold">Student Names</label>
+                                <select class="form-select" id="studentNames" aria-label="Select Student">
+                                    <option selected>Select Students</option>
+                                    <option value="1">Student 1</option>
+                                    <option value="2">Student 2</option>
+                                    <option value="3">Student 3</option>
+                                </select>
+                            </div>
+
+                            <!-- Assignment Names Select -->
+                            <div class="col-md-6">
+                                <label for="assignmentNames" class="form-label fw-bold">Assignment Names</label>
+                                <select class="form-select" id="assignmentNames" aria-label="Select Assignment">
+                                    <option selected>Select Assignment</option>
+                                    <option value="1">Assignment 1</option>
+                                    <option value="2">Assignment 2</option>
+                                    <option value="3">Assignment 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <button class="btn btn-light">
+                                    <i class="fa-solid fa-filter"></i> Apply Filters
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container mt-5">
+                        <table class="table table-striped">
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Assignment 1</th>
+                                    <th>Assignment 2</th>
+                                    <th>Assignment 3</th>
+                                    <th>Assignment 4</th>
+                                </tr>
+                                <tr>
+                                    <td>Student 1</td>
+                                    <td><input type="number" id="grade1_student1" placeholder="0" value="90"></td>
+                                    <td><input type="number" id="grade2_student1" placeholder="0" value="95"></td>
+                                    <td>85</td>
+                                    <td>77</td>
+                                </tr>
+                                <tr>
+                                    <td>Student 2</td>
+                                    <td>92</td>
+                                    <td><input type="number" id="grade2_student2" placeholder="0" value="89"></td>
+                                    <td><input type="number" id="grade3_student2" placeholder="0" value="45"></td>
+                                    <td>78</td>
+                                </tr>
+                                <tr>
+                                    <td>Student 3</td>
+                                    <td><input type="number" id="grade1_student3" placeholder="0" value="99"></td>
+                                    <td>75</td>
+                                    <td><input type="number" id="grade3_student3" placeholder="0" value="41"></td>
+                                    <td>85</td>
+                                </tr>
+                                <tr>
+                                    <td>Student 4</td>
+                                    <td>83</td>
+                                    <td><input type="number" id="grade2_student4" placeholder="0" value="29"></td>
+                                    <td><input type="number" id="grade3_student4" placeholder="0" value="63"></td>
+                                    <td>94</td>
+                                </tr>
+                            </table>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</container>
+
 </body>
 </html>
