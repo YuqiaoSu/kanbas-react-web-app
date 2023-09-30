@@ -10,6 +10,7 @@
     <link href="../index.css" rel="stylesheet"/>
     <link href="../stickyLinks.css" rel="stylesheet"/>
     <link href="home.css" rel="stylesheet"/>
+    <link href="grade.css" rel="stylesheet"/>
 </head>
 <body>
 <container>
@@ -119,43 +120,47 @@
                     </div>
 
                     <div class="container mt-2 table-responsive">
-                        <table class="table table-striped text-center">
-                                <tr>
-                                    <th>Student</th>
-                                    <th>Assignment 1</th>
-                                    <th>Assignment 2</th>
-                                    <th>Assignment 3</th>
-                                    <th>Assignment 4</th>
-                                </tr>
-                                <tr>
-                                    <td>Student 1</td>
-                                    <td><input type="number" id="grade1_student1" placeholder="0" value="90"></td>
-                                    <td><input type="number" id="grade2_student1" placeholder="0" value="95"></td>
-                                    <td>85</td>
-                                    <td>77</td>
-                                </tr>
-                                <tr>
-                                    <td>Student 2</td>
-                                    <td>92</td>
-                                    <td><input type="number" id="grade2_student2" placeholder="0" value="89"></td>
-                                    <td><input type="number" id="grade3_student2" placeholder="0" value="45"></td>
-                                    <td>78</td>
-                                </tr>
-                                <tr>
-                                    <td>Student 3</td>
-                                    <td><input type="number" id="grade1_student3" placeholder="0" value="99"></td>
-                                    <td>75</td>
-                                    <td><input type="number" id="grade3_student3" placeholder="0" value="41"></td>
-                                    <td>85</td>
-                                </tr>
-                                <tr>
-                                    <td>Student 4</td>
-                                    <td>83</td>
-                                    <td><input type="number" id="grade2_student4" placeholder="0" value="29"></td>
-                                    <td><input type="number" id="grade3_student4" placeholder="0" value="63"></td>
-                                    <td>94</td>
-                                </tr>
-                            </table>
+                        <table class="table table-striped text-center align-middle">
+                            <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Assignment 1</th>
+                                <th>Assignment 2</th>
+                                <th>Assignment 3</th>
+                                <th>Assignment 4</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-danger">Student 1</td>
+                                <td><input type="number" id="grade1_student1" placeholder="0" value="90"></td>
+                                <td><input type="number" id="grade2_student1" placeholder="0" value="95"></td>
+                                <td><input type="number" id="grade3_student1" placeholder="0" value="85"></td>
+                                <td><input type="number" id="grade4_student1" placeholder="0" value="77"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-danger">Student 2</td>
+                                <td><input type="number" id="grade1_student2" placeholder="0" value="92"></td>
+                                <td><input type="number" id="grade2_student2" placeholder="0" value="89"></td>
+                                <td><input type="number" id="grade3_student2" placeholder="0" value="45"></td>
+                                <td><input type="number" id="grade4_student2" placeholder="0" value="78"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-danger">Student 3</td>
+                                <td><input type="number" id="grade1_student3" placeholder="0" value="99"></td>
+                                <td><input type="number" id="grade2_student3" placeholder="0" value="75"></td>
+                                <td><input type="number" id="grade3_student3" placeholder="0" value="41"></td>
+                                <td><input type="number" id="grade4_student3" placeholder="0" value="85"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-danger">Student 4</td>
+                                <td><input type="number" id="grade1_student4" placeholder="0" value="83"></td>
+                                <td><input type="number" id="grade2_student4" placeholder="0" value="29"></td>
+                                <td><input type="number" id="grade3_student4" placeholder="0" value="63"></td>
+                                <td><input type="number" id="grade4_student4" placeholder="0" value="94"></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                 </div>
