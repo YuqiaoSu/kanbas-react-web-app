@@ -24,7 +24,7 @@
 
 .green-border {
     border-left: 2px solid green;
-    text-align: center;
+    text-align: left;
 }
 
 
@@ -33,7 +33,6 @@
     align-items: center;
     justify-content: end;
     padding-bottom: 5px;
-    position: relative;
 }
 
 .ellipsis {
