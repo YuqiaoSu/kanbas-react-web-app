@@ -17,13 +17,22 @@ container  .sidebar {
     background-color: black;
     color: white;
     text-align: center;
+    z-index: 1;
+    transition: 0.5s;
+
 }
 
-.sidebar .selected{
+.sidebar-nav{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.sidebar-nav .selected{
     background-color: white;
 }
 
-.sidebar a {
+.sidebar-nav a {
     display: block;
     margin: 5px;
     padding: 10px 5px 5px 5px;
@@ -31,18 +40,18 @@ container  .sidebar {
     color: white;
 }
 
-.sidebar i {
+.sidebar-nav i {
     font-size: 24px;
     color: red;
     display: block;
 }
 
 
-.sidebar p {
+.sidebar-nav li{
     font-size: 14px;
 }
 
-.sidebar .account-image {
+.sidebar-nav .account-image {
     color: white;
 }
 
@@ -50,7 +59,7 @@ container  .sidebar {
     color: grey;
 }
 
-.sidebar .selected p {
+.selected a{
     color: red;
 }
 

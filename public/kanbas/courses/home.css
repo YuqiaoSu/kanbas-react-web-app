@@ -1,3 +1,10 @@
+.breadcrumb-button{
+    padding: 0;
+    width: 36px;
+    height: 30px;
+    color: red;
+}
+
 .breadcrumb li{
     color: red;
 }
@@ -14,9 +21,6 @@
     flex-direction: row;
 }
 
-.custom-padding {
-    padding: 10px 15px; /* Adjust values according to your preference */
-}
 
 .slide-link {
     color: red;
@@ -76,4 +80,55 @@
 
 .view-calendar i{
 color: grey;
+}
+
+.chevron-button{
+    display: inline-block;
+}
+
+.hidden-kanbas{
+    display: none;
+    width: 100%;
+    z-index: 10;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    color: red;
+}
+
+.hidden-kanbas  span{
+    color:red;
+}
+.hidden-kanbas  a{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.hidden-x-button{
+    display: none;
+}
+
+.hidden-navigation{
+    display: none;
+    width: 100%;
+    background-color: white;
+    color: red;
+}
+.hidden-navigation ul{
+    list-style: none;
+
+}
+
+.hidden-navigation  a{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+    gap: 10px;
+    text-decoration: none;
+    color: red;
 }

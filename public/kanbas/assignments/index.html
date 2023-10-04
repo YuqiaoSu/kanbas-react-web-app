@@ -7,39 +7,83 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../index.css" rel="stylesheet"/>
     <link href="../stickyLinks.css" rel="stylesheet"/>
-    <link href="index.css" rel="stylesheet"/>
+    <link href="../courses/home.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../courses/home.js"></script>
 </head>
 <body>
 <container>
 
     <div class="sidebar  d-none d-lg-block">
-        <div><img src="../../images/northeastern.jpg" class="card-img-top" alt="..."></div>
-        <div><a href="../profile/index.html"><i class="fa-regular fa-circle-user account-image"></i><p>Account</p></a></div>
-        <div><a href="../dashboard/index.html"><i class="fa-solid fa-gauge-high"></i><p>Dashboard</p></a></div>
-        <div class="selected"><a href="../courses/home.html"><i class="fas fa-book"></i><p>Courses</p></a></div>
-        <div><a href="#"><i class="far fa-calendar-alt"></i><p>Calendar</p></a></div>
-        <div><a href="#"><i class="fas fa-inbox"></i><p>Inbox</p></a></div>
-        <div><a href="#"><i class="fa-regular fa-clock"></i><p>History</p></a></div>
-        <div><a href="#"><i class="fa-solid fa-tv"></i><p>Studio</p></a></div>
-        <div><a href="#"><i class="fas fa-share"></i><p>Commons</p></a></div>
-        <div><a href="#"><i class="far fa-question-circle"></i><p>Help</p></a></div>
-
+        <ul class="sidebar-nav">
+            <li><img src="../../images/northeastern.jpg" class="card-img-top" alt="..."></li>
+            <li><a href="../account.html"><i class="fa-regular fa-circle-user account-image"></i> Account</a></li>
+            <li><a href="../dashboard/index.html"><i class="fa-solid fa-gauge-high"></i> Dashboard</a></li>
+            <li class="selected"><a href="course.html"><i class="fas fa-book"></i> Courses</a></li>
+            <li><a href="#"><i class="far fa-calendar-alt"></i> Calendar</a></li>
+            <li><a href="#"><i class="fas fa-inbox"></i> Inbox</a></li>
+            <li><a href="#"><i class="fa-regular fa-clock"></i> History</a></li>
+            <li><a href="#"><i class="fa-solid fa-tv"></i> Studio</a></li>
+            <li><a href="#"><i class="fas fa-share"></i> Commons</a></li>
+            <li><a href="#"><i class="far fa-question-circle"></i> Help</a></li>
+        </ul>
     </div>
     <div class = "content_page_wrapper">
-        <div class="pt-3 ps-3">
-        <nav class="float-left" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" >
-            <ol class="breadcrumb">
-                <li> <i class="fa-solid fa-bars ms-3"></i> </li>
-                <li class="breadcrumb-item ms-3 color"><a href="../dashboard/index.html">CS4550_11111_Fall</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Assignments</li>
-                <li></li>
-            </ol>
-        </nav>
-            <button type="button" class="btn btn-light btn-sm float-end">
-                <i class="fas fa-glasses"></i> Student View
-            </button>
+        <!--        The large breadcrumb that will be hidden-->
+        <div class="d-none d-lg-block ">
+            <div class="breadcrumb d-flex  align-items-center  mt-0 ms-2 border-bottom mb-2  " style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <button  type="button" class="btn breadcrumb-button">
+                    <i class="fa-solid fa-bars m-0 p-0"></i> </button>
+                <ol class="breadcrumb flex-grow-1 mb-0">
+                    <li class="breadcrumb-item ms-3 color"><a href="../dashboard/index.html">CS4550_11111_Fall</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Home</li>
+                </ol>
+                <button type="button" class="btn btn-light btn-sm float-end">
+                    <i class="fas fa-glasses"></i> Student View
+                </button>
+            </div>
         </div>
-        <hr>
+        <!--The top border that appears when screen is smaller than bootstrap lg-->
+        <div class="mt-0 border-bottom mb-2 bg-black d-none d-sm-block d-md-block d-lg-none">
+            <div class="d-flex justify-content-between align-items-center ">
+                <button  type="button" class="btn " onclick="openKanbasSideBar()">
+                    <i class="fa-solid fa-bars m-0 p-0 text-white"></i> </button>
+                <a href="../dashboard/index.html" class="text-decoration-none text-white text-center">CS4550_11111_Fall <p>Home</p></a>
+                <div class="float-end d-flex">
+                    <button type="button" class="btn btn-sm">
+                        <i class="fas fa-glasses text-white"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm chevron-button" id="ChevronButton"
+                            onclick="openCourseNavigation()">
+                        <i class="fa-solid fa-circle-chevron-down text-white"></i>
+                    </button>
+                    <button  type="button" class="btn btn-sm float-end hidden-x-button" id="HiddenXButton"
+                             onclick="closeCourseNavigation()">
+                        <i class="fa-solid fa-x text-white"></i></button>
+                </div>
+            </div>
+        </div>
+        <!--Hidden course navigation links for smaller screen-->
+        <div class="hidden-navigation border-bottom mb-3" id="HiddenCourseNavigation">
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-layer-group"></i> Modules</a></li>
+                <li><a href="#"><i class="fas fa-comments"></i> Piazza</a></li>
+                <li><a href="#"><i class="fas fa-video"></i> Zoom Meetings</a></li>
+                <li><a href="../assignments/index.html"><i class="fas fa-tasks"></i> Assignments</a></li>
+                <li><a href="#"><i class="fas fa-pencil-alt"></i> Quizzes</a></li>
+                <li><a href="grades.html"><i class="fas fa-graduation-cap"></i> Grades</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> People</a></li>
+                <li><a href="#"><i class="fas fa-film"></i> Panopto Video</a></li>
+                <li><a href="#"><i class="fas fa-comment-dots"></i> Discussions</a></li>
+                <li><a href="#"><i class="fas fa-bell"></i> Announcements</a></li>
+                <li><a href="#"><i class="fas fa-file-alt"></i> Pages Files</a></li>
+                <li><a href="#"><i class="fas fa-ruler-combined"></i> Rubrics</a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i> Outcomes</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> Collaborations</a></li>
+                <li><a href="#"><i class="fas fa-book-open"></i> Syllabus</a></li>
+                <li><a href="#"><i class="fas fa-cogs"></i> Settings</a></li>
+            </ul>
+        </div>
 
         <div class="home-content">
 
@@ -200,6 +244,20 @@
 
 
 </container>
-
+<div class="hidden-kanbas" id="HiddenKanbasSidebar">
+    <button  type="button" class="btn btn-lg  float-end mb-3" onclick="closeKanbasSideBar()">
+        <i class="fa-solid fa-x text-black"></i></button>
+    <ul class=" sidebar-nav d-flex flex-column justify-content-center  mt-5">
+        <li><a href="../account.html"><i class="fa-regular fa-circle-user text-black"></i><span>Account</span></a></li>
+        <li><a href="../dashboard/index.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a></li>
+        <li class="selected"><a href="course.html"><i class="fas fa-book"></i><span>Courses</span></a></li>
+        <li><a href="#"><i class="far fa-calendar-alt"></i><span>Calendar</span></a></li>
+        <li><a href="#"><i class="fas fa-inbox"></i><span>Inbox</span></a></li>
+        <li><a href="#"><i class="fa-regular fa-clock"></i><span>History</span></a></li>
+        <li><a href="#"><i class="fa-solid fa-tv"></i><span>Studio</span></a></li>
+        <li><a href="#"><i class="fas fa-share"></i><span>Commons</span></a></li>
+        <li><a href="#"><i class="far fa-question-circle"></i><span>Help</span></a></li>
+    </ul>
+</div>
 </body>
 </html>

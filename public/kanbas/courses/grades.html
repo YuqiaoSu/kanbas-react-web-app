@@ -9,24 +9,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <link href="../index.css" rel="stylesheet"/>
     <link href="../stickyLinks.css" rel="stylesheet"/>
-    <link href="home.css" rel="stylesheet"/>
-    <link href="grade.css" rel="stylesheet"/>
+    <link href="../courses/home.css" rel="stylesheet"/>
+
 </head>
 <body>
 <container>
 
     <div class="sidebar  d-none d-lg-block">
-        <div><img src="../../images/northeastern.jpg" class="card-img-top" alt="..."></div>
-        <div><a href="../profile/index.html"><i class="fa-regular fa-circle-user account-image"></i><p>Account</p></a></div>
-        <div><a href="../dashboard/index.html"><i class="fa-solid fa-gauge-high"></i><p>Dashboard</p></a></div>
-        <div class="selected"><a href="../courses/home.html"><i class="fas fa-book"></i><p>Courses</p></a></div>
-        <div><a href="#"><i class="far fa-calendar-alt"></i><p>Calendar</p></a></div>
-        <div><a href="#"><i class="fas fa-inbox"></i><p>Inbox</p></a></div>
-        <div><a href="#"><i class="fa-regular fa-clock"></i><p>History</p></a></div>
-        <div><a href="#"><i class="fa-solid fa-tv"></i><p>Studio</p></a></div>
-        <div><a href="#"><i class="fas fa-share"></i><p>Commons</p></a></div>
-        <div><a href="#"><i class="far fa-question-circle"></i><p>Help</p></a></div>
-
+        <ul class="sidebar-nav">
+            <li><img src="../../images/northeastern.jpg" class="card-img-top" alt="..."></li>
+            <li><a href="../account.html"><i class="fa-regular fa-circle-user account-image"></i> Account</a></li>
+            <li><a href="../dashboard/index.html"><i class="fa-solid fa-gauge-high"></i> Dashboard</a></li>
+            <li class="selected"><a href="course.html"><i class="fas fa-book"></i> Courses</a></li>
+            <li><a href="#"><i class="far fa-calendar-alt"></i> Calendar</a></li>
+            <li><a href="#"><i class="fas fa-inbox"></i> Inbox</a></li>
+            <li><a href="#"><i class="fa-regular fa-clock"></i> History</a></li>
+            <li><a href="#"><i class="fa-solid fa-tv"></i> Studio</a></li>
+            <li><a href="#"><i class="fas fa-share"></i> Commons</a></li>
+            <li><a href="#"><i class="far fa-question-circle"></i> Help</a></li>
+        </ul>
     </div>
     <div class = "content_page_wrapper">
         <nav class="float-left pt-3 ps-3" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" >
@@ -85,32 +86,43 @@
                     </button>
                 </div>
                 <!--                The main page below the hr line-->
-                <div class="d-flex flex-column justify-content-center ">
+                <div class="d-flex flex-column flex-grow-0 justify-content-center ">
                     <div class="container">
                         <div class="row mb-2">
                             <div class="col-md-6">
                                 <label for="studentNames" class="form-label fw-bold">Student Names</label>
-                                <select class="form-select" id="studentNames" aria-label="Select Student">
-                                    <option selected>Select Students</option>
-                                    <option value="1">Student 1</option>
-                                    <option value="2">Student 2</option>
-                                    <option value="3">Student 3</option>
-                                </select>
+                                <div class="dropdown">
+                                    <button style="width: 100%;" class="btn btn-outline-secondary dropdown-toggle btn-block text-start" type="button" id="studentNames" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <span class="text-start">Select Students</span>
+                                    </button>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">search assignments</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div class="col-md-6">
                                 <label for="assignmentNames" class="form-label fw-bold">Assignment Names</label>
-                                <select class="form-select" id="assignmentNames" aria-label="Select Assignment">
-                                    <option selected>
+                                <div class="dropdown">
+                                    <button style="width: 100%;" class="btn btn-outline-secondary dropdown-toggle btn-block text-start" type="button" id="assignmentNames" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="fa-solid fa-magnifying-glass"></i>
-                                        <span>Select Assignment</span></option>
-                                    <option value="1">Assignment 1</option>
-                                    <option value="2">Assignment 2</option>
-                                    <option value="3">Assignment 3</option>
-                                </select>
-                            </div>
+                                        <span class="text-start">Search Assignments</span>
+                                    </button>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">search assignments</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </div>
                         </div>
-                        <div class="row">
+                            </div>
+
+                        <div class="row mb-2">
                             <div class="col-md-4">
                                 <button class="btn btn-light">
                                     <i class="fa-solid fa-filter"></i> Apply Filters
@@ -119,49 +131,49 @@
                         </div>
                     </div>
 
-                    <div class="container mt-2 table-responsive">
-                        <table class="table table-striped text-center align-middle">
+                        <div class="container table-responsive">
+                        <table class="table table-striped table-bordered table-responsive mt-3">
                             <thead>
                             <tr>
-                                <th>Student</th>
-                                <th>Assignment 1</th>
-                                <th>Assignment 2</th>
-                                <th>Assignment 3</th>
-                                <th>Assignment 4</th>
+                                <th>Student Name</th>
+                                <th class="text-center">Assignment 1 <br> <small class="text-muted">Out of 100</small></th>
+                                <th class="text-center">Assignment 2 <br> <small class="text-muted">Out of 100</small></th>
+                                <th class="text-center">Assignment 3 <br> <small class="text-muted">Out of 100</small></th>
+                                <th class="text-center">Assignment 4 <br> <small class="text-muted">Out of 100</small></th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
                                 <td class="text-danger">Student 1</td>
-                                <td><input type="number" id="grade1_student1" placeholder="0" value="90"></td>
-                                <td><input type="number" id="grade2_student1" placeholder="0" value="95"></td>
-                                <td><input type="number" id="grade3_student1" placeholder="0" value="85"></td>
-                                <td><input type="number" id="grade4_student1" placeholder="0" value="77"></td>
+                                <td><input type="text" id="grade1_student1" placeholder="0" value="90%"></td>
+                                <td><input type="text" id="grade2_student1" placeholder="0" value="95%"></td>
+                                <td><input type="text" id="grade3_student1" placeholder="0" value="85%"></td>
+                                <td><input type="text" id="grade4_student1" placeholder="0" value="77%"></td>
                             </tr>
                             <tr>
                                 <td class="text-danger">Student 2</td>
-                                <td><input type="number" id="grade1_student2" placeholder="0" value="92"></td>
-                                <td><input type="number" id="grade2_student2" placeholder="0" value="89"></td>
-                                <td><input type="number" id="grade3_student2" placeholder="0" value="45"></td>
-                                <td><input type="number" id="grade4_student2" placeholder="0" value="78"></td>
+                                <td><input type="text" id="grade1_student2" placeholder="0" value="92%"></td>
+                                <td><input type="text" id="grade2_student2" placeholder="0" value="89%"></td>
+                                <td><input type="text" id="grade3_student2" placeholder="0" value="45%"></td>
+                                <td><input type="text" id="grade4_student2" placeholder="0" value="78%"></td>
                             </tr>
                             <tr>
                                 <td class="text-danger">Student 3</td>
-                                <td><input type="number" id="grade1_student3" placeholder="0" value="99"></td>
-                                <td><input type="number" id="grade2_student3" placeholder="0" value="75"></td>
-                                <td><input type="number" id="grade3_student3" placeholder="0" value="41"></td>
-                                <td><input type="number" id="grade4_student3" placeholder="0" value="85"></td>
+                                <td><input type="text" id="grade1_student3" placeholder="0" value="99%"></td>
+                                <td><input type="text" id="grade2_student3" placeholder="0" value="75%"></td>
+                                <td><input type="text" id="grade3_student3" placeholder="0" value="41%"></td>
+                                <td><input type="text" id="grade4_student3" placeholder="0" value="85%"></td>
                             </tr>
                             <tr>
                                 <td class="text-danger">Student 4</td>
-                                <td><input type="number" id="grade1_student4" placeholder="0" value="83"></td>
-                                <td><input type="number" id="grade2_student4" placeholder="0" value="29"></td>
-                                <td><input type="number" id="grade3_student4" placeholder="0" value="63"></td>
-                                <td><input type="number" id="grade4_student4" placeholder="0" value="94"></td>
+                                <td><input type="text" id="grade1_student4" placeholder="0" value="83%"></td>
+                                <td><input type="text" id="grade2_student4" placeholder="0" value="29%"></td>
+                                <td><input type="text" id="grade3_student4" placeholder="0" value="63%"></td>
+                                <td><input type="text" id="grade4_student4" placeholder="0" value="94%"></td>
                             </tr>
                             </tbody>
                         </table>
-                    </div>
+                        </div>
 
                 </div>
 
