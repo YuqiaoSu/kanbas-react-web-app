@@ -1,0 +1,43 @@
+.top_bar .font {
+    font-size: 24px;
+    margin: 10px;
+}
+
+.card{
+    width: 250px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+
+.course-thumbnail {
+    height: 150px;
+    margin-bottom: 15px;
+}
+
+.custom-card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.fa-address-book {
+    display: block;
+    margin-top: 5px;
+}
+.container{
+    margin: 0px;
+    padding: 0px;
+}
+
+.course-thumbnail {
+    position: relative; /* Set relative positioning */
+    /* ... other styles ... */
+}
+
+.thumbnail-icon {
+    position: absolute; /* Absolute position the icon */
+    top: 10px; /* Offset from the top */
+    right: 10px; /* Offset from the right */
+}

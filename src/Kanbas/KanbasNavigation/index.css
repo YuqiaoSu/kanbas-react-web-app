@@ -1,0 +1,55 @@
+.sidebar {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    height: 100%;
+    width: 85px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    transition: 0.5s;
+
+}
+
+.sidebar ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.selected{
+    background-color: white;
+}
+
+.sidebar-nav{
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar-nav-icon{
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    color: red;
+    display: block;
+}
+
+
+.sidebar-nav-text{
+    font-size: 14px;
+}
+
+.sidebar-nav-account-image {
+    color: white;
+}
+
+.selected  .sidebar-nav-account-image {
+    color: grey;
+}
+
+.selected .sidebar-nav-text{
+    color: red;
+}

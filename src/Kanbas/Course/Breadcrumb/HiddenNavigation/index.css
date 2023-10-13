@@ -1,0 +1,19 @@
+.hidden-navigation{
+    display: none;
+    width: 100%;
+    background-color: white;
+    color: red;
+}
+.hidden-navigation ul{
+    list-style: none;
+
+}
+
+.hidden-navigation-nav{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+    gap: 10px;
+    text-decoration: none;
+    color: red;
+}
