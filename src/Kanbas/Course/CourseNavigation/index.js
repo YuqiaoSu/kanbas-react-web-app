@@ -1,7 +1,8 @@
 import {Link, useParams, useLocation} from "react-router-dom";
 import "./index.css"
+import db from "../../Database";
 
-function KanbasNavigation() {
+function CourseNavigation() {
     const courseItems = [
         {text: 'Home'},
         {text: 'Modules'},
@@ -22,9 +23,11 @@ function KanbasNavigation() {
         {text: 'Settings'}
     ];
     const { courseId } = useParams();
+    const course = db.courses.find((course) => course._id === courseId);
     const {pathname} = useLocation();
     return (
-        <div className="sticky-links">
+        <div className="sticky-links  d-none d-lg-block me-3">
+            <span className="ellipsis">{course.startDate}_{course.name}_{course.number}</span>
             <ul>
                 {courseItems.map((item, index) => (
                     <li key={index} className={`${pathname.includes(item.text) && "selected"}`}>
@@ -39,4 +42,4 @@ function KanbasNavigation() {
     );
 }
 
-export default KanbasNavigation;
+export default CourseNavigation;

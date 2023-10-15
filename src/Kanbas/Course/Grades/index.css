@@ -1,0 +1,38 @@
+.header-bar{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-bottom: 5px;
+}
+
+.dropdown-toggle::after {
+    width: 0;
+    height: 0;
+    margin-left: .3em;
+    vertical-align: middle;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-left: .3em solid transparent;
+    float: right;
+    margin-top: 8px;
+}
+
+table td {
+    position: relative;
+}
+
+table td input {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: inherit;
+}

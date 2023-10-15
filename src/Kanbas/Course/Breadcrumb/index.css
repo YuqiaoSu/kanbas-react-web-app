@@ -1,7 +1,7 @@
 .breadcrumb-button{
     padding: 0;
-    width: 36px;
-    height: 30px;
+    width: 24px;
+    height: 20px;
     color: red;
 }
 
@@ -12,4 +12,7 @@
 .breadcrumb a{
     text-decoration: none;
     color: red;
+}
+.hidden-x-button{
+    display: none;
 }

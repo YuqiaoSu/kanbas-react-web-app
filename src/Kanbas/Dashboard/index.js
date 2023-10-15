@@ -27,8 +27,8 @@ function Dashboard() {
                                     </div>
                                     <div className="card-body">
                                         <Link key={course._id} to={`/Kanbas/Courses/${course._id}`}
-                                              className="custom-card-title">
-                                            {course.name} {course._id}
+                                              className="custom-card-title" id={course._id}>
+                                            {course.name}<br/> {course._id}
                                         </Link>
                                         <p className="card-text">{course.number}<br/>
                                             {course.startDate} -> {course.endDate}<br/>

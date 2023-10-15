@@ -17,7 +17,7 @@ function KanbasNavigation() {
     ];
         const { pathname } = useLocation();
         return (
-            <div className="sidebar">
+            <div className="sidebar  d-none d-lg-block">
                 <ul>
                     {menuItems.map((item, index) => (
                         <li key={index}>

@@ -36,3 +36,12 @@
 .selected  .sticky-links-nav{
     color: black;
 }
+
+.ellipsis {
+    padding-left: 15px;
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color:grey;
+}

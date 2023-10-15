@@ -1,58 +1,12 @@
 [
-  {
-    "_id": "CS4550_01",
-    "name": "Web Development",
-    "number": "CS4550_1111",
-    "startDate": "2023-01-10",
+  { "_id": "RS101",
+    "name": "Rocket Propulsion", "number": "RS4550", "startDate": "2023-01-10",
     "endDate": "2023-05-15"
   },
-  {
-    "_id": "CS4550_02",
-    "name": "Web Development",
-    "number": "CS4550_2222",
-    "startDate": "2023-02-10",
-    "endDate": "2023-06-15"
+  { "_id": "RS102",
+    "name": "Aerodynamics", "number": "RS4560", "startDate": "2023-01-10", "endDate": "2023-05-15"
   },
-  {
-    "_id": "CS4550_03",
-    "name": "Web Development",
-    "number": "CS4550_3333",
-    "startDate": "2023-03-10",
-    "endDate": "2023-07-15"
-  },
-  {
-    "_id": "CS4550_04",
-    "name": "Web Development",
-    "number": "CS4550_4444",
-    "startDate": "2023-04-10",
-    "endDate": "2023-08-15"
-  },
-  {
-    "_id": "CS4550_05",
-    "name": "Web Development",
-    "number": "CS4550_5555",
-    "startDate": "2023-05-10",
-    "endDate": "2023-09-15"
-  },
-  {
-    "_id": "CS4550_06",
-    "name": "Web Development",
-    "number": "CS4550_6666",
-    "startDate": "2023-06-10",
-    "endDate": "2023-10-15"
-  },
-  {
-    "_id": "CS4550_07",
-    "name": "Web Development",
-    "number": "CS4550_7777",
-    "startDate": "2023-07-10",
-    "endDate": "2023-11-15"
-  },
-  {
-    "_id": "CS4550_08",
-    "name": "Web Development",
-    "number": "CS4550_8888",
-    "startDate": "2023-08-10",
-    "endDate": "2023-12-15"
+  { "_id": "RS103",
+    "name": "Spacecraft Design", "number": "RS4570", "startDate": "2023-01-10", "endDate": "2023-05-15"
   }
 ]

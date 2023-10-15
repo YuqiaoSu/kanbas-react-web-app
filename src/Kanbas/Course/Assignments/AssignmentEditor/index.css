@@ -1,0 +1,6 @@
+.header-bar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 5px;
+}

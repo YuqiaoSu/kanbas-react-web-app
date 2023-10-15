@@ -3,6 +3,13 @@ import "./index.css";
 import 'bootstrap';
 import {FaBars, FaChevronCircleDown, FaGlasses, FaTimes} from "react-icons/fa";
 import HiddenNavigation from "./HiddenNavigation";
+import HiddenKanbas from "./HiddenKanbas";
+
+function openKanbasSideBar() {
+
+    document.getElementById("HiddenKanbasSidebar").style.display = "block";
+}
+
 function openCourseNavigation() {
     document.getElementById("HiddenCourseNavigation").style.display = "block";
     document.getElementById("HiddenXButton").style.display = "inline-block";
@@ -22,8 +29,8 @@ function Breadcrumb() {
             <div className="d-none d-lg-block ">
                 <div className="breadcrumb d-flex  align-items-center  mt-0 ms-2 border-bottom mb-2  "
                      style={{"--bs-breadcrumb-divider": "'>'"}} aria-label="breadcrumb">
-                    <button type="button" className="btn breadcrumb-button">
-                        <FaBars className="m-0 p-0" /></button>
+                    <button type="button" className="btn ">
+                        <FaBars className="m-0 p-0 breadcrumb-button" /></button>
                     <ol className="breadcrumb flex-grow-1 mb-0">
                         <Link to={`/Kanbas/Dashboard`}
                               className={`breadcrumb-item ms-3 color`}>
@@ -36,12 +43,12 @@ function Breadcrumb() {
                     </button>
                 </div>
             </div>
-            <div className="mt-0 border-bottom mb-2 bg-black d-none d-sm-block d-md-block d-lg-none">
+            <div className="mt-0 border-bottom  bg-black d-none d-sm-block d-md-block d-lg-none">
                 <div className="d-flex justify-content-between align-items-center ">
-                    <button type="button" className="btn " onClick="openKanbasSideBar()">
-                        <FaBars className="m-0 p-0" /></button>
+                    <button type="button" className="btn " onClick={openKanbasSideBar}>
+                        <FaBars className="m-0 p-0 breadcrumb-button" /></button>
                     <Link to={`/Kanbas/Dashboard`}
-                          className={`breadcrumb-item ms-3 color`}>
+                          className={`text-decoration-none text-white text-center`}>
                         {courseId}
                     </Link>
                     <div className="float-end d-flex">
@@ -52,13 +59,15 @@ function Breadcrumb() {
                                 onClick={openCourseNavigation} >
                             <FaChevronCircleDown className="text-white" id={"ChevronButton"}/>
                         </button>
-                        <button type="button" className="btn btn-sm float-end hidden-x-button" id="HiddenXButton"
+                        <button type="button" className=" btn btn-sm float-end" id="HiddenXButton" style={{'display': "none"}}
                                 onClick={closeCourseNavigation}>
-                            <FaTimes className="text-white" /></button>
+                            <FaTimes className="text-white " /></button>
                     </div>
                 </div>
                 <HiddenNavigation/>
             </div>
+
+            <HiddenKanbas/>
 
         </>
     );
