@@ -1,5 +1,5 @@
 import db from "../../Database";
-import { useParams } from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {FaFileImport, FaFileExport, FaCog, FaSearch, FaFilter} from 'react-icons/fa';
 import "./index.css"
 function Grades() {
@@ -7,7 +7,7 @@ function Grades() {
     const assignments = db.assignments.filter((assignment) => assignment.course === courseId);
     const enrollments = db.enrollments.filter((enrollment) => enrollment.course === courseId);
     return (
-        <div class="ps-2 flex-grow-1 pe-5 justify-content-center">>
+        <div class="ps-2 flex-grow-1 pe-5 justify-content-center">
             <div className="header-bar">
                 <button className="btn btn-light me-2">
                     <FaFileImport /> Import
@@ -17,9 +17,9 @@ function Grades() {
                         <FaFileExport /> Export
                     </button>
                     <ul className="dropdown-menu">
-                        <li><a className="dropdown-item" href="#">Action</a></li>
-                        <li><a className="dropdown-item" href="#">Another action</a></li>
-                        <li><a className="dropdown-item" href="#">Something else here</a></li>
+                        <li><Link className="dropdown-item" href="#">Action</Link></li>
+                        <li><Link className="dropdown-item" href="#">Another action</Link></li>
+                        <li><Link className="dropdown-item" href="#">Something else here</Link></li>
                     </ul>
                 </div>
                 <button className="btn btn-light">
@@ -37,9 +37,9 @@ function Grades() {
                             </button>
 
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Search assignments</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                <li><Link className="dropdown-item" href="#">Search assignments</Link></li>
+                                <li><Link className="dropdown-item" href="#">Another action</Link></li>
+                                <li><Link className="dropdown-item" href="#">Something else here</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -53,9 +53,9 @@ function Grades() {
                             </button>
 
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Search assignments</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                <li><Link className="dropdown-item" href="#">Search assignments</Link></li>
+                                <li><Link className="dropdown-item" href="#">Another action</Link></li>
+                                <li><Link className="dropdown-item" href="#">Something else here</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -86,7 +86,7 @@ function Grades() {
                                 {assignments.map((assignment) => {
                                     const grade = db.grades.find(
                                         (grade) => grade.student === enrollment.user && grade.assignment === assignment._id);
-                                    return (<td><input type="text"  placeholder="0" value={grade?.grade || ""}/></td>);})}
+                                    return (<td><input type="number" defaultValue={grade?.grade || ""}/></td>);})}
                             </tr>);
                     })}
                     </tbody></table>
