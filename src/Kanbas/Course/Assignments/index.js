@@ -26,6 +26,7 @@ function Assignments() {
                     </button>
                 </div>
             </div>
+            <hr/>
             <div className="list-group">
                 <Link className="list-group-item list-group-item-action list-group-item-secondary">
                     <FaGripVertical className="float-left me-3" />
