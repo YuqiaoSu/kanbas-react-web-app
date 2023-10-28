@@ -2,7 +2,7 @@ import {Link, useParams, useLocation} from "react-router-dom";
 import "./index.css"
 import db from "../../Database";
 
-function CourseNavigation() {
+function CourseNavigation({ course }) {
     const courseItems = [
         {text: 'Home'},
         {text: 'Modules'},
@@ -23,7 +23,6 @@ function CourseNavigation() {
         {text: 'Settings'}
     ];
     const { courseId } = useParams();
-    const course = db.courses.find((course) => course._id === courseId);
     const {pathname} = useLocation();
     return (
         <div className="sticky-links  d-none d-lg-block me-3">

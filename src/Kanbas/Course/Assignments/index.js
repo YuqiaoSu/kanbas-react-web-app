@@ -1,11 +1,16 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import db from "../../Database";
-import "./index.css"
+import "./index.css";
+import {useSelector, useDispatch} from "react-redux";
 import {FaPlus, FaEllipsisV, FaEdit, FaCheckCircle, FaGripVertical} from 'react-icons/fa';
+import {setAssignment,newAssignment} from "./assignmentsReducer";
 function Assignments() {
     const { courseId } = useParams();
-    const assignments = db.assignments;
+    const assignments = useSelector((state) => state.assignmentsReducer.assignments)
+    let assignment = useSelector((state) => state.assignmentsReducer.assignment)
+    const dispatch = useDispatch();
+
     const courseAssignments = assignments.filter(
         (assignment) => assignment.course === courseId);
     return (
@@ -18,9 +23,12 @@ function Assignments() {
                     <button type="button" className="btn btn-light btn-sm">
                         <FaPlus /> Group
                     </button>
-                    <button type="button" className="btn btn-danger btn-sm">
+                    <Link
+                        to={`/Kanbas/Courses/${courseId}/Assignments/new`}
+                        onClick={()=> dispatch(newAssignment())}
+                        type="button" className="btn btn-danger btn-sm">
                         <FaPlus /> Assignment
-                    </button>
+                    </Link>
                     <button type="button" className="btn btn-light btn-sm">
                         <FaEllipsisV />
                     </button>
@@ -28,7 +36,8 @@ function Assignments() {
             </div>
             <hr/>
             <div className="list-group">
-                <Link className="list-group-item list-group-item-action list-group-item-secondary">
+                <Link
+                    className="list-group-item list-group-item-action list-group-item-secondary">
                     <FaGripVertical className="float-left me-3" />
                     Assignments
                     <FaEllipsisV className="float-end" />
@@ -39,6 +48,7 @@ function Assignments() {
                     <Link
                         key={assignment._id}
                         to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                        onClick={()=> dispatch(setAssignment(assignment))}
                         className="list-group-item list-group-item-action green-border">
 
                         <div className="d-flex justify-content-between align-items-center">
