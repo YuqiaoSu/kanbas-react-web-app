@@ -14,12 +14,12 @@ const assignmentsSlice = createSlice({
         addAssignment: (state, action) => {
             state.assignments = [
                 { ...action.payload, _id: new Date().getTime().toString() },
-                ...state.modules,
+                ...state.assignments,
             ];
         },
         deleteAssignment: (state, action) => {
             state.assignments = state.assignments.filter(
-                (assignment) => assignment._id !== action.payload
+                (assignment) => assignment._id !== action.payload._id
             );
         },
         updateAssignment: (state, action) => {

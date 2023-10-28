@@ -17,7 +17,7 @@ function AssignmentEditor() {
 
     const handleSave = () => {
         console.log(assignmentId);
-        if(assignmentId.localeCompare("new")){
+        if(assignmentId === "new"){
             console.log((courseId));
             dispatch(addAssignment({...assignment,course: courseId}));
         }

@@ -1,16 +1,32 @@
-import React from "react";
+import {React, useState} from "react";
 import { Link, useParams } from "react-router-dom";
 import db from "../../Database";
 import "./index.css";
 import {useSelector, useDispatch} from "react-redux";
 import {FaPlus, FaEllipsisV, FaEdit, FaCheckCircle, FaGripVertical} from 'react-icons/fa';
-import {setAssignment,newAssignment} from "./assignmentsReducer";
+import {setAssignment,newAssignment, deleteAssignment} from "./assignmentsReducer";
+import PopUp from "../../PopUp";
+import Popup from 'reactjs-popup';
 function Assignments() {
     const { courseId } = useParams();
+    const [isPop, setIsPop] = useState(false);
     const assignments = useSelector((state) => state.assignmentsReducer.assignments)
     let assignment = useSelector((state) => state.assignmentsReducer.assignment)
     const dispatch = useDispatch();
+    const handleYes = () => {
+        dispatch(deleteAssignment(assignment))
+        setIsPop(false);
+    };
 
+    const handleNo = () => {
+        console.log('No clicked!');
+        setIsPop(false);
+    };
+
+    const handleDelete = (assignment) =>{
+        dispatch(setAssignment(assignment))
+        setIsPop(true)
+    }
     const courseAssignments = assignments.filter(
         (assignment) => assignment.course === courseId);
     return (
@@ -45,10 +61,8 @@ function Assignments() {
                     <span className="badge rounded-pill text-bg-light float-end me-3">40% of total</span>
                 </Link>
                 {courseAssignments.map((assignment) => (
-                    <Link
+                    <div
                         key={assignment._id}
-                        to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-                        onClick={()=> dispatch(setAssignment(assignment))}
                         className="list-group-item list-group-item-action green-border">
 
                         <div className="d-flex justify-content-between align-items-center">
@@ -56,19 +70,37 @@ function Assignments() {
                                 <FaGripVertical className="float-left me-3" />
                                 <FaEdit className="text-success me-3" />
                                 <div>
-                                    <strong> {assignment.title}</strong>
-                                    <p className="mb-0">Description Here</p>
+                                    <Link
+                                        to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                                        onClick={()=> dispatch(setAssignment(assignment))}
+                                    className={"text-decoration-none text-black"}>
+                                        <strong> {assignment.title}</strong>
+                                    </Link>
+                                    <p className="mb-0">{assignment.description} Due: {assignment.dueDate}</p>
+
                                 </div>
                             </div>
                             <div className="assignment-right-icons d-flex align-items-center">
                                 <FaCheckCircle className="text-success" />
                                 <FaEllipsisV />
+                                <button type="button" className="btn btn-light btn-sm"
+                                        onClick={() =>
+                                            handleDelete(assignment)}>
+                                    Delete
+                                </button>
                             </div>
                         </div>
-                    </Link>
+                    </div>
                 ))}
             </div>
+            <PopUp
+                show={isPop}
+                onClose={() => setIsPop(false)}
+                onYes={handleYes}
+                onNo={handleNo}
+            />
         </div>
+
     );
 }
 export default Assignments;
