@@ -1,12 +1,14 @@
-import {React, useState} from "react";
+import {React, useEffect, useState} from "react";
 import { Link, useParams } from "react-router-dom";
-import db from "../../Database";
 import "./index.css";
 import {useSelector, useDispatch} from "react-redux";
 import {FaPlus, FaEllipsisV, FaEdit, FaCheckCircle, FaGripVertical} from 'react-icons/fa';
-import {setAssignment,newAssignment, deleteAssignment} from "./assignmentsReducer";
+import {setAssignment, newAssignment, deleteAssignment, setAssignments, addAssignment} from "./assignmentsReducer";
 import PopUp from "../../PopUp";
 import Popup from 'reactjs-popup';
+import * as service from "./service";
+import * as client from "../Modules/client";
+import {addModule} from "../Modules/modulesReducer";
 function Assignments() {
     const { courseId } = useParams();
     const [isPop, setIsPop] = useState(false);
@@ -14,7 +16,10 @@ function Assignments() {
     let assignment = useSelector((state) => state.assignmentsReducer.assignment)
     const dispatch = useDispatch();
     const handleYes = () => {
-        dispatch(deleteAssignment(assignment))
+        service.deleteAssignment(assignment).then(() => {
+            dispatch(deleteAssignment(assignment));
+        });
+
         setIsPop(false);
     };
 
@@ -23,12 +28,20 @@ function Assignments() {
         setIsPop(false);
     };
 
+
     const handleDelete = (assignment) =>{
         dispatch(setAssignment(assignment))
         setIsPop(true)
     }
     const courseAssignments = assignments.filter(
         (assignment) => assignment.course === courseId);
+    useEffect(() => {
+        service.findModulesForCourse(courseId)
+            .then((assignments) =>
+                dispatch(setAssignments(assignments))
+            );
+    }, [courseId]);
+
     return (
         <div className="ps-2 flex-grow-1 pe-5">
             <div className="d-flex align-items-center">

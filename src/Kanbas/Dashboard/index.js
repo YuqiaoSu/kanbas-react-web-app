@@ -30,7 +30,7 @@ function Dashboard(
                                 <button onClick={addNewCourse} >
                                     Add
                                 </button>
-                                <button onClick={updateCourse} >
+                                <button onClick={()=>{updateCourse(course);}} >
                                     Update
                                 </button>
                             </div>
@@ -43,24 +43,24 @@ function Dashboard(
                             <input value={course.endDate} className="form-control" type="date"
                                    onChange={(e) => setCourse({ ...course, endDate: e.target.value }) } />
                         </div>
-                        {courses.map((course) => (
+                        {courses.map((c) => (
                             <div className="col-lg-3 col-md-4 col-sm-6">
                                 <div className="card">
                                     <div className="course-thumbnail bg-primary">
                                         <FaEllipsisV className="thumbnail-icon" aria-hidden="true"/>
                                     </div>
                                     <div className="card-body">
-                                        <Link key={course._id} to={`/Kanbas/Courses/${course._id}`}
-                                              className="custom-card-title" id={course._id}>
-                                            {course.name}<br/> {course._id}
+                                        <Link key={c._id} to={`/Kanbas/Courses/${c._id}`}
+                                              className="custom-card-title" id={c._id}>
+                                            {c.name}<br/> {c._id}
                                         </Link>
-                                        <p className="card-text">{course.number}<br/>
-                                            {course.startDate} -> {course.endDate}<br/>
+                                        <p className="card-text">{c.number}<br/>
+                                            {c.startDate} -> {c.endDate}<br/>
                                             <FaAddressBook aria-hidden="true"/>
                                             <button
                                                 onClick={(event) => {
                                                     event.preventDefault();
-                                                    setCourse(course);
+                                                    setCourse(c);
                                                 }}>
                                                 Edit
                                             </button>
@@ -68,7 +68,7 @@ function Dashboard(
                                             <button
                                                 onClick={(event) => {
                                                     event.preventDefault();
-                                                    deleteCourse(course._id);
+                                                    deleteCourse(c);
                                                 }}>
                                                 Delete
                                             </button>

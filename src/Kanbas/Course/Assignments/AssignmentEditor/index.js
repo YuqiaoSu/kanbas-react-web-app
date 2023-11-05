@@ -4,9 +4,10 @@ import db from "../../../Database";
 import "./index.css"
 import {FaCheckCircle, FaEllipsisV} from "react-icons/fa";
 import {useDispatch, useSelector} from "react-redux";
-import {setModule} from "../../Modules/modulesReducer";
+import {addModule, setModule} from "../../Modules/modulesReducer";
 import {addAssignment, setAssignment, updateAssignment} from "../assignmentsReducer";
 import course from "../../index";
+import * as service from "../service";
 
 function AssignmentEditor() {
     const assignment = useSelector((state) => state.assignmentsReducer.assignment)
@@ -16,13 +17,16 @@ function AssignmentEditor() {
     const {assignmentId} = useParams();
 
     const handleSave = () => {
-        console.log(assignmentId);
         if(assignmentId === "new"){
-            console.log((courseId));
-            dispatch(addAssignment({...assignment,course: courseId}));
+            service.createAssignment(courseId, assignment).then((assignment) => {
+                dispatch(addAssignment(assignment));
+            });
         }
         else{
-            dispatch(updateAssignment(assignment));
+            service.updateAssignment(assignment).then((assignment) => {
+                dispatch(updateAssignment(assignment));
+            });
+
         }
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     };
