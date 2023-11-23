@@ -50,16 +50,20 @@ function UserTable() {
             <table className="table">
                 <thead>
                 <tr>
-                    <th colSpan={2}>Username</th>
+                    <th>Username</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                 </tr>
                 <tr>
                     <td>
-                        <input value={user.password}  className="form-control" onChange={(e) => setUser({ ...user, password: e.target.value })}/>
-                    </td>
-                    <td>
-                        <input value={user.username} className="form-control"  onChange={(e) => setUser({ ...user, username: e.target.value })}/>
+                        <div className="row g-2">
+                            <div className="col">
+                                <input type= "text" value={user.password}  className="form-control" onChange={(e) => setUser({ ...user, password: e.target.value })}/>
+                            </div>
+                            <div className="col">
+                                <input type= "text" value={user.username} className="form-control"  onChange={(e) => setUser({ ...user, username: e.target.value })}/>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         <input value={user.firstName} onChange={(e) => setUser({ ...user, firstName: e.target.value })}/>
