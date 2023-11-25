@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import {BsTrash3Fill, BsPlusCircleFill, BsFillCheckCircleFill, BsPencil}
     from "react-icons/bs";
 import * as client from "./client";
 import {Link} from "react-router-dom";
+
 function UserTable() {
     const [users, setUsers] = useState([]);
     const fetchUsers = async () => {
         const users = await client.findAllUsers();
         setUsers(users);
     };
-    const [user, setUser] = useState({ username: "", password: "", role: "USER" });
+    const [user, setUser] = useState({username: "", password: "", role: "USER"});
     const createUser = async () => {
         try {
             const newUser = await client.createUser(user);
@@ -43,36 +44,39 @@ function UserTable() {
         }
     };
 
-    useEffect(() => { fetchUsers(); }, []);
+    useEffect(() => {
+        fetchUsers();
+    }, []);
     return (
         <div>
             <h1>User List</h1>
             <table className="table">
                 <thead>
                 <tr>
-                    <th>Username</th>
+                    <th colSpan={2}>Username</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                 </tr>
                 <tr>
                     <td>
-                        <div className="row g-2">
-                            <div className="col">
-                                <input type= "text" value={user.password}  className="form-control" onChange={(e) => setUser({ ...user, password: e.target.value })}/>
-                            </div>
-                            <div className="col">
-                                <input type= "text" value={user.username} className="form-control"  onChange={(e) => setUser({ ...user, username: e.target.value })}/>
-                            </div>
-                        </div>
+
+                        <input type="text" value={user.password} className="form-control"
+                               onChange={(e) => setUser({...user, password: e.target.value})}/>
+
+                    </td>
+                    <td >
+                        <input type="text" value={user.username} className="form-control"
+                               onChange={(e) => setUser({...user, username: e.target.value})}/>
+                    </td>
+
+                    <td>
+                        <input value={user.firstName} onChange={(e) => setUser({...user, firstName: e.target.value})}/>
                     </td>
                     <td>
-                        <input value={user.firstName} onChange={(e) => setUser({ ...user, firstName: e.target.value })}/>
+                        <input value={user.lastName} onChange={(e) => setUser({...user, lastName: e.target.value})}/>
                     </td>
                     <td>
-                        <input value={user.lastName} onChange={(e) => setUser({ ...user, lastName: e.target.value })}/>
-                    </td>
-                    <td>
-                        <select value={user.role} onChange={(e) => setUser({ ...user, role: e.target.value })}>
+                        <select value={user.role} onChange={(e) => setUser({...user, role: e.target.value})}>
                             <option value="USER">User</option>
                             <option value="ADMIN">Admin</option>
                             <option value="FACULTY">Faculty</option>
@@ -81,16 +85,16 @@ function UserTable() {
                     </td>
                     <td className="text-nowrap">
                         <BsFillCheckCircleFill onClick={updateUser}
-                                               className="me-2 text-success fs-1 text" />
+                                               className="me-2 text-success fs-1 text"/>
                         <BsPlusCircleFill onClick={createUser}
-                                          className="text-success fs-1 text" />
+                                          className="text-success fs-1 text"/>
                     </td>
                 </tr>
                 </thead>
                 <tbody>
                 {users.map((user) => (
                     <tr key={user._id}>
-                        <td>
+                        <td colSpan={2}>
                             <Link to={`/project/account/${user._id}`}>
                                 {user.username}
                             </Link>
@@ -99,10 +103,10 @@ function UserTable() {
                         <td>{user.lastName}</td>
                         <td className="text-nowrap">
                             <button className="btn btn-danger me-2">
-                                <BsTrash3Fill onClick={() => deleteUser(user)} />
+                                <BsTrash3Fill onClick={() => deleteUser(user)}/>
                             </button>
                             <button className="btn btn-warning me-2" onClick={() => selectUser(user)}>
-                                <BsPencil  />
+                                <BsPencil/>
                             </button>
                         </td>
                     </tr>))}
@@ -111,4 +115,5 @@ function UserTable() {
         </div>
     );
 }
+
 export default UserTable;
